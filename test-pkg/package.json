@@ -1,0 +1,20 @@
+{
+    "name": "test-bindings-cpp",
+    "scripts": {
+        "dev": "tsx src/index.ts",
+        "build": "tsc",
+        "bindings-install": "cd ../bindings-cpp && npm install",
+        "bindings-build": "cd ../bindings-cpp && npm install && npm run prebuildify && npm run build",
+        "test": "npm run bindings-build && npm run dev",
+        "install": "npm run bindings-install && npm install --ignore-scripts"
+    },
+    "devDependencies": {
+        "@types/node": "^26.1.1",
+        "tsx": "^4.23.1",
+        "typescript": "^7.0.2"
+    },
+    "dependencies": {
+        "serialport": "^13.0.0",
+        "@serialport/bindings-cpp": "../bindings-cpp"
+    }
+}
